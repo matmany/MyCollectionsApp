@@ -11,6 +11,38 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'list',
+    loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
+  },
+  {
+    path: 'item',
+    loadChildren: () => import('./item/item.module').then( m => m.ItemPageModule)
+  },
+  {
+    path: 'create-item',
+    loadChildren: () => import('./create-item/create-item.module').then( m => m.CreateItemPageModule)
+  },
+  {
+    path: 'update-item',
+    loadChildren: () => import('./update-item/update-item.module').then( m => m.UpdateItemPageModule)
+  },
+  {
+    path: 'create-list',
+    loadChildren: () => import('./create-list/create-list.module').then( m => m.CreateListPageModule)
+  },
+  {
+    path: 'create-category',
+    loadChildren: () => import('./create-category/create-category.module').then( m => m.CreateCategoryPageModule)
+  },
+  {
+    path: 'collection',
+    loadChildren: () => import('./collection/collection.module').then( m => m.CollectionPageModule)
+  },
 ];
 
 @NgModule({

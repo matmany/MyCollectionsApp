@@ -1,3 +1,17 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/categories" tab="list">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>Categories</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/create-category" tab="create">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Add Categories</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
