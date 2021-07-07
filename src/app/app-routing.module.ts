@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
   },
   {
-    path: 'item',
+    path: 'itens/:id',
     loadChildren: () => import('./item/item.module').then( m => m.ItemPageModule)
   },
   {
@@ -40,7 +40,8 @@ const routes: Routes = [
     loadChildren: () => import('./create-category/create-category.module').then( m => m.CreateCategoryPageModule)
   },
   {
-    path: 'collection',
+    //path: 'collection',
+    path: 'list/:id',
     loadChildren: () => import('./collection/collection.module').then( m => m.CollectionPageModule)
   },
 ];

@@ -4,32 +4,36 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-export class Collection {
-  id:number;
-  name:string;
-
+export class Item {
+    id: number;
+    name: string;
+    url_img: string;
+    description: string;
+    notes: string;
+    amount: number
+    review: string;
+    position: number;
+    options: JSON;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class CollectionCrudService {
-
-  endpoint = 'http://localhost:8000/api/categories';
+export class ItemCrudService {
+  //http://localhost:8000/api/collections/1/itens
+  endpoint = 'http://localhost:8000/api/collections';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-
   constructor(private httpClient: HttpClient) { }
 
-  //http://localhost:8000/api/categories/{id}/collections
-  getCollections(id): Observable<Collection[]>{
+  getItens(id): Observable<Item[]>{
     console.log("Request:"+id);
-    return this.httpClient.get<Collection[]>(this.endpoint+'/'+id+'/collections')
+    return this.httpClient.get<Item[]>(this.endpoint+'/'+id+'/itens')
     .pipe(
-      tap(collection=> console.log('Collections Retrivies!')),
-      catchError(this.handleError<Collection[]>('Get Collentions', []))
+      tap(items=> console.log('Itens Retrivies!')),
+      catchError(this.handleError<Item[]>('Get Itens', []))
     )
   }
 

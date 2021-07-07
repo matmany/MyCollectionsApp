@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Collections</ion-title>
+    <ion-title>Categories</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,7 +9,6 @@
     <ion-item *ngFor="let category of Categories" button (click)="goToCollection(category.id)">
       <ion-label >
         <h2>{{category.name}}</h2>
-        <h2>{{category.id}}</h2>
       </ion-label>
 
       <!-- <div class="item-note" item-end>

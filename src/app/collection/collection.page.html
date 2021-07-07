@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>collection</ion-title>
+    <ion-title>collections</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let collection of Collections" button (click)="goToItens(collection.id)">
+      <ion-label >
+        <h2>{{collection.name}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+

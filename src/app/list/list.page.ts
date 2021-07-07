@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { CategoryCrudService } from '../service/category-crud.service';
 
 @Component({
@@ -20,7 +20,13 @@ export class ListPage implements OnInit {
   }
 
   goToCollection(id:number){
-    this.router.navigate(['/collection',id])
+    this.router.navigate(['/list',id])
+    // let navigationExtras: NavigationExtras = {
+    //   state: {
+    //     id: id
+    //   }
+    // };
+    // this.router.navigate(['/collection'],navigationExtras)
   }
 
   ionViewDidEnter(){
